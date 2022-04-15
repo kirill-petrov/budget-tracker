@@ -3,14 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 // const data = JSON.parse(localStorage.getItem('rSandbox') || '{}');
 
-const initialState = {
-  transactions: [
-    { id: 1, text: 'Flower', amount: -20 },
-    { id: 2, text: 'Salary', amount: 300 },
-    { id: 3, text: 'Book', amount: -10 },
-    { id: 4, text: 'Camera', amount: 150 },
-  ],
-};
+const initialState = [
+  { id: 1, text: 'Flower', amount: -20 },
+  { id: 2, text: 'Salary', amount: 300 },
+  { id: 3, text: 'Book', amount: -10 },
+  { id: 4, text: 'Camera', amount: 150 },
+];
 
 export const transactionsSlice = createSlice({
   name: 'transactions',
