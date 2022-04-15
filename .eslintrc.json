@@ -21,6 +21,12 @@
     "react"
   ],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/require-default-props": [
+      1,
+      {
+        "ignoreFunctionalComponents": true
+      }
+    ]
   }
 }
