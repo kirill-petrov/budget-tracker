@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TransactionList(props) {
+function TransactionList() {
   return (
     <>
       <h3>History</h3>

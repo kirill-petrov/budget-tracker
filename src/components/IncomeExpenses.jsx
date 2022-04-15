@@ -1,6 +1,6 @@
 import React from 'react';
 
-function IncomeExpenses(props) {
+function IncomeExpenses() {
   return (
     <div className="inc-exp-container">
       <div>

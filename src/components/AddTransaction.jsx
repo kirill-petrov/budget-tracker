@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function AddTransaction(props) {
+function AddTransaction() {
   const [text, setText] = useState('');
   const [amount, setAmount] = useState(0);
 

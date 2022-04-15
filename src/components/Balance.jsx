@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Balance(props) {
+function Balance() {
   return (
     <>
       <h4>Your Balance</h4>
