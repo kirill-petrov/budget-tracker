@@ -1,31 +1,24 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
-// const data = JSON.parse(localStorage.getItem('rSandbox') || '{}');
+const data = JSON.parse(localStorage.getItem('budget-tracker') || '{}');
 
-const initialState = [
-  { id: 1, text: 'Flower', amount: -20 },
-  { id: 2, text: 'Salary', amount: 300 },
-  { id: 3, text: 'Book', amount: -10 },
-  { id: 4, text: 'Camera', amount: 150 },
-];
+const initialState = data.transactions ? data.transactions : [];
 
 export const transactionsSlice = createSlice({
   name: 'transactions',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.count += 1;
+    transactionDelete: (state, action) => {
+      const id = action.payload;
+      return state.filter((item) => item.id !== id);
     },
-    // decrement: (state) => {
-    //   state.count -= 1;
-    // },
-    // incrementByAmount: (state, action) => {
-    //   state.count += action.payload;
-    // },
+    transactionAdd: (state, action) => {
+      state.push(action.payload);
+    },
   },
 });
 
-export const { increment } = transactionsSlice.actions;
+export const { transactionAdd, transactionDelete } = transactionsSlice.actions;
 
 export default transactionsSlice.reducer;

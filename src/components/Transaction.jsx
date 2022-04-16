@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { transactionDelete } from '../redux/reducers/transactionsReducer';
 
 function Transaction({ transaction }) {
-  // const sign = transaction.amount < 0 ? '-' : '+';
+  const dispatch = useDispatch();
+
+  const handleDelete = (id) => {
+    dispatch(transactionDelete(id));
+  };
 
   return (
     <li className={transaction.amount < 0 ? 'minus' : 'plus'}>
@@ -11,6 +17,7 @@ function Transaction({ transaction }) {
       <button
         type="button"
         className="delete-btn"
+        onClick={() => handleDelete(transaction.id)}
       >
         Delete
       </button>
@@ -20,6 +27,7 @@ function Transaction({ transaction }) {
 
 Transaction.propTypes = {
   transaction: PropTypes.shape({
+    id: PropTypes.string,
     text: PropTypes.string,
     amount: PropTypes.number,
   }),
