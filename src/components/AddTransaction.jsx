@@ -1,19 +1,27 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { transactionAdd } from '../redux/reducers/transactionsReducer';
 import generateId from '../utils/generateId';
 
 function AddTransaction() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [text, setText] = useState('');
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('');
 
   const handleTransactionAdd = (e) => {
     e.preventDefault();
-    console.log(generateId());
-    console.log(e.target.text.value.trim());
-    console.log(e.target.amount.value.trim());
-    // console.log(e.target);
+    if (text && amount && amount !== 0) {
+      dispatch(
+        transactionAdd({
+          id: generateId(),
+          text: text.trim(),
+          amount: Number(amount),
+        })
+      );
+    }
+    setText('');
+    setAmount('');
   };
 
   return (
