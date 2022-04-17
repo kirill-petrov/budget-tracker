@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -29,29 +30,27 @@ function AddTransaction() {
       <h3>Add new transaction</h3>
       <form onSubmit={handleTransactionAdd}>
         <div className="form-control">
-          <label htmlFor="text">
-            Text
-            <input
-              name="text"
-              type="text"
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              placeholder="Enter text..."
-            />
-          </label>
+          <label htmlFor="text">Text</label>
+          <input
+            name="text"
+            type="text"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Enter text..."
+          />
         </div>
         <div className="form-control">
           <label htmlFor="amount">
             Amount <br />
             (negative - expense, positive - income)
-            <input
-              name="amount"
-              type="number"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              placeholder="Enter amount..."
-            />
           </label>
+          <input
+            name="amount"
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            placeholder="Enter amount..."
+          />
         </div>
         <button
           type="submit"
