@@ -5,7 +5,7 @@ const data = JSON.parse(localStorage.getItem('budget-tracker') || '{}');
 
 const initialState = data.transactions ? data.transactions : [];
 
-export const transactionsSlice = createSlice({
+const transactionsSlice = createSlice({
   name: 'transactions',
   initialState,
   reducers: {

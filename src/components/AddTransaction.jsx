@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { transactionAdd } from '../redux/reducers/transactionsReducer';
+import { transactionAdd } from '../redux/reducers/transactionsSlice';
 import generateId from '../utils/generateId';
 
 function AddTransaction() {

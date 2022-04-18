@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { transactionDelete } from '../redux/reducers/transactionsReducer';
+import { transactionDelete } from '../redux/reducers/transactionsSlice';
 
 function Transaction({ transaction }) {
   const dispatch = useDispatch();
