@@ -1,8 +1,8 @@
 {
-  "name": "react-sanbox",
+  "name": "expense-tracker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "start": "webpack serve --mode development --open --hot",
     "build": "webpack --mode production",
